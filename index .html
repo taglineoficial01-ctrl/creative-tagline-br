@@ -2,75 +2,334 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Termos de Serviço da Creative TagLine — condições para utilização dos serviços, pedidos, pagamentos, suporte e entregas.">
 <title>Termos de Serviço — Creative TagLine</title>
-<meta name="description" content="Termos de Serviço da Creative TagLine.">
+
 <style>
-:root{--bg:#090a0d;--card:#111318;--line:#272a32;--text:#f4f5f7;--muted:#aeb3bd;--accent:#fff}
-*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#07080a,#0d0f13);color:var(--text);font:16px/1.7 Arial,Helvetica,sans-serif}
-.container{width:min(920px,92%);margin:auto}.hero{padding:70px 0 38px;border-bottom:1px solid var(--line)}
-.badge{display:inline-block;border:1px solid var(--line);padding:6px 12px;border-radius:999px;color:var(--muted);font-size:13px}
-h1{font-size:clamp(34px,7vw,58px);line-height:1.05;margin:18px 0 10px}h2{margin-top:38px;font-size:24px}
-p,li{color:#d4d7de}.updated{color:var(--muted);font-size:14px}
-main{padding:20px 0 60px}.card{background:rgba(17,19,24,.9);border:1px solid var(--line);border-radius:18px;padding:28px;margin:18px 0}
-a{color:var(--text)}.button{display:inline-block;margin-top:14px;padding:12px 18px;border-radius:10px;background:#fff;color:#090a0d;text-decoration:none;font-weight:700}
-footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:14px}
+:root{
+  --bg:#070a12;
+  --bg2:#0d1220;
+  --card:rgba(17,22,35,.82);
+  --card2:#111827;
+  --line:#273149;
+  --text:#f5f7ff;
+  --muted:#a9b3c7;
+  --accent:#ff4fb3;
+  --accent2:#8b5cf6;
+  --success:#6ee7b7;
+  --shadow:0 18px 60px rgba(0,0,0,.38);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 15% 0%,rgba(255,79,179,.16),transparent 32%),
+    radial-gradient(circle at 85% 10%,rgba(139,92,246,.15),transparent 30%),
+    linear-gradient(180deg,var(--bg),#0a0e18 55%,var(--bg));
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.75;
+}
+a{color:inherit}
+.container{width:min(1050px,92%);margin:auto}
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:72px 0 58px;
+  border-bottom:1px solid var(--line);
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  width:380px;height:380px;
+  right:-150px;top:-190px;
+  background:rgba(255,79,179,.18);
+  filter:blur(70px);
+  border-radius:50%;
+}
+.brand{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 14px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:999px;
+  background:rgba(255,255,255,.04);
+  color:#ffd4ed;
+  font-weight:800;
+  letter-spacing:.08em;
+  font-size:12px;
+  text-transform:uppercase;
+}
+.dot{
+  width:9px;height:9px;border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 18px var(--accent);
+}
+h1{
+  font-size:clamp(38px,7vw,70px);
+  line-height:1.02;
+  margin:22px 0 16px;
+  letter-spacing:-.045em;
+}
+.gradient{
+  background:linear-gradient(90deg,#fff,#ff9bd2 48%,#a78bfa);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.subtitle{max-width:760px;color:var(--muted);font-size:18px;margin:0}
+.meta{
+  display:flex;flex-wrap:wrap;gap:10px;
+  margin-top:25px;
+}
+.meta span{
+  padding:7px 12px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  color:#cbd5e1;
+  background:rgba(255,255,255,.025);
+  font-size:13px;
+}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.button{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:45px;padding:0 17px;border-radius:12px;
+  text-decoration:none;font-weight:800;
+  border:1px solid var(--line);
+  background:#151c2d;
+}
+.button.primary{
+  border-color:transparent;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  box-shadow:0 10px 30px rgba(255,79,179,.18);
+}
+main{padding:42px 0 70px}
+.layout{display:grid;grid-template-columns:250px 1fr;gap:25px}
+.toc{
+  position:sticky;top:18px;align-self:start;
+  padding:18px;border:1px solid var(--line);
+  border-radius:18px;background:rgba(12,16,27,.76);
+  backdrop-filter:blur(12px);
+}
+.toc strong{display:block;margin-bottom:10px}
+.toc a{
+  display:block;padding:7px 8px;color:var(--muted);
+  text-decoration:none;border-radius:8px;font-size:14px;
+}
+.toc a:hover{background:rgba(255,79,179,.08);color:#fff}
+.card{
+  background:linear-gradient(180deg,rgba(17,24,39,.9),rgba(13,18,30,.82));
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:28px;
+  margin-bottom:18px;
+  box-shadow:var(--shadow);
+}
+.card h2{
+  margin:0 0 12px;
+  font-size:23px;
+  letter-spacing:-.02em;
+}
+.card h2 .num{
+  color:#ff75c3;
+  margin-right:7px;
+}
+.card h3{font-size:17px;margin:22px 0 8px}
+.card p{color:#c2cada;margin:10px 0}
+.card ul,.card ol{color:#c2cada;padding-left:22px}
+.card li{margin:7px 0}
+.notice{
+  border-left:3px solid var(--accent);
+  padding:14px 17px;
+  background:rgba(255,79,179,.06);
+  border-radius:0 12px 12px 0;
+  color:#dbe2ef;
+}
+.good{border-left-color:var(--success);background:rgba(110,231,183,.055)}
+.contact{
+  display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;
+}
+footer{
+  border-top:1px solid var(--line);
+  padding:30px 0 45px;color:#8f9bb0;
+  text-align:center;font-size:13px;
+}
+@media(max-width:800px){
+  .layout{grid-template-columns:1fr}
+  .toc{position:static}
+  .card{padding:21px}
+  .contact{grid-template-columns:1fr}
+  h1{font-size:43px}
+}
 </style>
 </head>
+
 <body>
-<header class="hero"><div class="container">
-<span class="badge">CREATIVE TAGLINE</span>
-<h1>Termos de Serviço</h1>
-<p>Condições gerais para utilização dos serviços e realização de pedidos com a Creative TagLine.</p>
-<p class="updated">Última atualização: 17 de agosto de 2026</p>
-<a class="button" href="https://discord.gg/5uP6VaCXg" target="_blank" rel="noopener">Falar com a Creative TagLine no Discord</a>
-</div></header>
+<header class="hero">
+  <div class="container">
+    <span class="brand"><span class="dot"></span> Creative TagLine</span>
+    <h1><span class="gradient">Termos de Serviço</span></h1>
+    <p class="subtitle">
+      Condições gerais para utilização dos serviços, realização de pedidos,
+      comunicação com a equipe, pagamentos, alterações, entregas e suporte da Creative TagLine.
+    </p>
 
-<main class="container">
-<section class="card"><h2>1. Aceitação</h2>
-<p>Ao solicitar, contratar ou utilizar qualquer serviço da Creative TagLine, você declara que leu e concorda com estes Termos de Serviço. Caso não concorde com alguma condição, não utilize os serviços.</p></section>
+    <div class="meta">
+      <span>Última atualização: 17 de agosto de 2026</span>
+      <span>Versão 1.0</span>
+      <span>Leitura recomendada antes do pedido</span>
+    </div>
 
-<section class="card"><h2>2. Serviços e pedidos</h2>
-<p>A Creative TagLine oferece serviços criativos e digitais conforme a descrição apresentada no momento do pedido. Escopo, prazo, formato de entrega e demais condições podem variar de acordo com cada projeto e serão combinados com o cliente.</p>
+    <div class="actions">
+      <a class="button primary" href="https://discord.gg/5uP6VaCXg" target="_blank" rel="noopener noreferrer">Entrar em contato no Discord</a>
+      <a class="button" href="#termos">Ler os termos</a>
+    </div>
+  </div>
+</header>
+
+<main id="termos">
+<div class="container layout">
+
+<nav class="toc" aria-label="Índice">
+  <strong>📑 Neste documento</strong>
+  <a href="#aceitacao">1. Aceitação</a>
+  <a href="#servicos">2. Serviços e pedidos</a>
+  <a href="#cliente">3. Informações do cliente</a>
+  <a href="#prazos">4. Prazos e entregas</a>
+  <a href="#pagamentos">5. Pagamentos</a>
+  <a href="#alteracoes">6. Alterações e revisões</a>
+  <a href="#cancelamentos">7. Cancelamentos e reembolsos</a>
+  <a href="#propriedade">8. Propriedade intelectual</a>
+  <a href="#conduta">9. Conduta</a>
+  <a href="#responsabilidade">10. Responsabilidade</a>
+  <a href="#privacidade">11. Privacidade</a>
+  <a href="#alteracoes-termos">12. Alterações dos termos</a>
+  <a href="#contato">13. Contato</a>
+</nav>
+
+<section>
+
+<article class="card" id="aceitacao">
+<h2><span class="num">01.</span> Aceitação dos termos</h2>
+<p>Ao entrar em contato, solicitar, contratar ou utilizar qualquer serviço da Creative TagLine, o cliente declara que leu, compreendeu e concorda com estes Termos de Serviço.</p>
+<p>Se o cliente não concordar com alguma condição, deverá interromper a contratação e entrar em contato com a equipe para esclarecer suas dúvidas antes de realizar o pedido.</p>
+<div class="notice">Estes termos existem para deixar claras as responsabilidades da Creative TagLine e do cliente e evitar dúvidas durante o atendimento.</div>
+</article>
+
+<article class="card" id="servicos">
+<h2><span class="num">02.</span> Serviços e pedidos</h2>
+<p>A Creative TagLine oferece serviços criativos e digitais conforme o escopo informado durante o atendimento. O serviço contratado será definido de acordo com a descrição, orçamento e informações aprovadas pelo cliente.</p>
+<h3>Durante um pedido</h3>
+<ul>
+<li>O cliente deve explicar de forma clara o que deseja.</li>
+<li>Referências, exemplos, textos, imagens, cores, medidas e demais informações necessárias devem ser enviados quando solicitados.</li>
+<li>O início do trabalho poderá depender da confirmação do pedido e das condições de pagamento.</li>
+<li>Solicitações que estejam fora do escopo inicialmente combinado poderão gerar novo orçamento ou alteração no prazo.</li>
+</ul>
+</article>
+
+<article class="card" id="cliente">
+<h2><span class="num">03.</span> Informações fornecidas pelo cliente</h2>
+<p>O cliente é responsável por fornecer informações, arquivos, textos, referências, instruções e acessos corretos e suficientes para a execução do serviço.</p>
+<ul>
+<li>Informações incorretas podem causar atrasos ou necessidade de refazer etapas.</li>
+<li>O cliente deve possuir autorização para utilizar materiais enviados à Creative TagLine.</li>
+<li>A equipe não deve receber senhas pessoais desnecessárias. Quando houver necessidade de acesso técnico, deverá ser utilizado o método mais seguro disponível.</li>
+<li>O cliente deve conferir os dados finais antes da aprovação da entrega.</li>
+</ul>
+</article>
+
+<article class="card" id="prazos">
+<h2><span class="num">04.</span> Prazos, andamento e entregas</h2>
+<p>Os prazos são definidos de acordo com a complexidade do serviço, fila de pedidos, disponibilidade da equipe e rapidez no envio das informações necessárias.</p>
+<h3>O prazo pode ser afetado por:</h3>
+<ul>
+<li>Demora do cliente em responder ou enviar materiais;</li>
+<li>mudanças no escopo do pedido;</li>
+<li>solicitação de novas versões ou alterações;</li>
+<li>problemas técnicos ou indisponibilidade de plataformas de terceiros.</li>
+</ul>
+<p>A entrega será considerada realizada quando o material combinado for disponibilizado ao cliente pelo meio definido no atendimento.</p>
+</article>
+
+<article class="card" id="pagamentos">
+<h2><span class="num">05.</span> Pagamentos</h2>
+<p>Valores, forma de pagamento e condições específicas serão informados antes da confirmação do pedido.</p>
+<ul>
+<li>O trabalho poderá somente começar após a confirmação do pagamento, quando essa condição tiver sido estabelecida.</li>
+<li>O cliente deve conferir o valor e a descrição do serviço antes de efetuar o pagamento.</li>
+<li>Custos adicionais decorrentes de serviços extras ou alterações fora do escopo poderão ser cobrados separadamente, mediante comunicação.</li>
+<li>Nenhum pagamento deve ser realizado para contas ou pessoas não confirmadas pela equipe oficial.</li>
+</ul>
+<div class="notice good">Em caso de dúvida sobre um pagamento, confirme os dados diretamente com a equipe antes de transferir qualquer valor.</div>
+</article>
+
+<article class="card" id="alteracoes">
+<h2><span class="num">06.</span> Alterações e revisões</h2>
+<p>Alterações dentro do escopo combinado poderão ser avaliadas durante o projeto. A quantidade de revisões, quando aplicável, será definida no orçamento ou no atendimento.</p>
+<p>Mudanças que alterem significativamente a ideia original, o formato, a quantidade de peças ou o objetivo do serviço podem ser tratadas como um novo escopo e exigir novo prazo e orçamento.</p>
+</article>
+
+<article class="card" id="cancelamentos">
+<h2><span class="num">07.</span> Cancelamentos e reembolsos</h2>
+<p>Solicitações de cancelamento ou reembolso serão analisadas de acordo com o estágio do serviço, o que já foi produzido, os custos envolvidos e as condições informadas no momento da contratação.</p>
+<p>Quando o trabalho já tiver sido iniciado, valores correspondentes a etapas efetivamente executadas poderão não ser integralmente reembolsáveis.</p>
+<p>Qualquer situação excepcional deverá ser apresentada à equipe para análise individual.</p>
+</article>
+
+<article class="card" id="propriedade">
+<h2><span class="num">08.</span> Propriedade intelectual e materiais</h2>
+<p>O cliente declara que possui autorização para utilizar os materiais que enviar para produção. Não é permitido solicitar à Creative TagLine a utilização de materiais que infrinjam direitos autorais, marcas, imagens ou outros direitos de terceiros.</p>
+<p>Quando um serviço incluir materiais de terceiros, bibliotecas, fontes, imagens, ícones ou plataformas externas, poderão existir licenças e condições próprias desses fornecedores.</p>
+<p>O cliente não deve utilizar ou distribuir materiais recebidos de forma diferente do que foi combinado quando houver restrições específicas informadas no atendimento.</p>
+</article>
+
+<article class="card" id="conduta">
+<h2><span class="num">09.</span> Conduta e uso permitido</h2>
+<p>É proibido utilizar os serviços da Creative TagLine para atividades ilegais, fraudulentas, abusivas, ameaçadoras ou que violem direitos de terceiros.</p>
+<p>Também não serão aceitos comportamentos como assédio, discriminação, tentativa de golpe, falsificação de informações, abuso da equipe ou tentativa de explorar vulnerabilidades dos serviços.</p>
+<p>A Creative TagLine poderá recusar solicitações que apresentem risco, sejam incompatíveis com os serviços oferecidos ou violem estes termos.</p>
+</article>
+
+<article class="card" id="responsabilidade">
+<h2><span class="num">10.</span> Limitação de responsabilidade</h2>
+<p>A Creative TagLine buscará prestar os serviços conforme o combinado, porém não garante disponibilidade contínua de plataformas, hospedagens, APIs, Discord, GitHub ou outros serviços de terceiros.</p>
+<p>Falhas, alterações de políticas, indisponibilidade, bloqueios ou mudanças realizadas por plataformas externas podem afetar um projeto e não dependem exclusivamente da Creative TagLine.</p>
+</article>
+
+<article class="card" id="privacidade">
+<h2><span class="num">11.</span> Privacidade e segurança</h2>
+<p>Informações recebidas durante o atendimento devem ser utilizadas somente para a finalidade relacionada ao serviço solicitado.</p>
+<p>O cliente deve evitar enviar dados pessoais ou credenciais que não sejam necessários para a execução do trabalho. Quando houver necessidade de informações de acesso, recomenda-se utilizar métodos temporários ou com permissões limitadas sempre que possível.</p>
+</article>
+
+<article class="card" id="alteracoes-termos">
+<h2><span class="num">12.</span> Alterações destes termos</h2>
+<p>Estes Termos de Serviço podem ser atualizados para refletir mudanças nos serviços, processos, regras da comunidade ou requisitos legais.</p>
+<p>A versão publicada nesta página será considerada a versão vigente a partir da data indicada no topo do documento.</p>
+</article>
+
+<article class="card contact" id="contato">
+<div>
+<h2><span class="num">13.</span> Contato e suporte</h2>
+<p>Para dúvidas, pedidos, suporte ou assuntos relacionados a estes termos, entre em contato com a Creative TagLine pelo Discord oficial.</p>
+<p><strong>Discord:</strong> discord.gg/5uP6VaCXg</p>
+</div>
+<a class="button primary" href="https://discord.gg/5uP6VaCXg" target="_blank" rel="noopener noreferrer">Abrir Discord</a>
+</article>
+
 </section>
-
-<section class="card"><h2>3. Informações fornecidas pelo cliente</h2>
-<p>O cliente é responsável por fornecer informações, referências, arquivos e instruções corretas e suficientes para a execução do pedido. A Creative TagLine não se responsabiliza por erros decorrentes de informações incorretas ou incompletas fornecidas pelo cliente.</p>
-</section>
-
-<section class="card"><h2>4. Pagamentos</h2>
-<p>Quando houver cobrança, valores, forma de pagamento e condições serão informados antes da confirmação do pedido. Um pedido poderá não ser iniciado até que as condições de pagamento combinadas sejam cumpridas.</p>
-</section>
-
-<section class="card"><h2>5. Alterações e revisões</h2>
-<p>Alterações que estejam dentro do escopo combinado poderão ser avaliadas durante o projeto. Mudanças que alterem substancialmente o pedido original poderão exigir novo prazo ou valor, previamente informado ao cliente.</p>
-</section>
-
-<section class="card"><h2>6. Cancelamentos e reembolsos</h2>
-<p>Solicitações de cancelamento ou reembolso serão analisadas de acordo com o estágio do serviço, o que já foi produzido e as condições previamente combinadas. Nenhum reembolso é garantido quando o serviço já tiver sido integralmente executado ou quando houver situação incompatível com as condições acordadas.</p>
-</section>
-
-<section class="card"><h2>7. Propriedade intelectual</h2>
-<p>O cliente não deve enviar materiais que infrinjam direitos de terceiros. A utilização e eventual transferência dos direitos sobre o material produzido dependerão do que for combinado para cada pedido. A Creative TagLine poderá manter registros ou apresentar trabalhos em portfólio somente quando isso tiver sido permitido ou acordado.</p>
-</section>
-
-<section class="card"><h2>8. Conduta</h2>
-<p>É proibido utilizar os serviços para atividades ilegais, fraudulentas, abusivas ou que violem direitos de terceiros. A Creative TagLine poderá recusar ou interromper pedidos que violem estas condições.</p>
-</section>
-
-<section class="card"><h2>9. Limitação de responsabilidade</h2>
-<p>A Creative TagLine buscará prestar os serviços conforme o combinado, mas não garante disponibilidade contínua de plataformas, serviços de terceiros ou sistemas externos. O cliente também é responsável por manter cópias de segurança dos materiais que fornecer.</p>
-</section>
-
-<section class="card"><h2>10. Alterações destes termos</h2>
-<p>Estes Termos de Serviço podem ser atualizados para refletir mudanças nos serviços, processos ou requisitos legais. A versão publicada nesta página será a versão vigente a partir da data indicada.</p>
-</section>
-
-<section class="card"><h2>11. Contato</h2>
-<p>Para dúvidas, pedidos, suporte ou assuntos relacionados a estes termos, entre em contato com a Creative TagLine pelo servidor oficial no Discord.</p>
-<a class="button" href="https://discord.gg/5uP6VaCXg" target="_blank" rel="noopener">Entrar no Discord</a>
-</section>
+</div>
 </main>
 
-<footer><div class="container">© 2026 Creative TagLine. Todos os direitos reservados.</div></footer>
-</body></html>
+<footer>
+<div class="container">
+  © 2026 Creative TagLine · Todos os direitos reservados.
+  <br>Este documento é informativo e poderá ser atualizado conforme os serviços e processos da empresa.
+</div>
+</footer>
+</body>
+</html>
